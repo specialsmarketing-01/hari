@@ -3289,6 +3289,61 @@ input[type=checkbox] {
   align-items: center;
   height: 100%;
 }
+
+/* Match main nav text: inherit size from .ak-nav (16px desktop) + same casing as menu */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 0;
+  font-size: inherit;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  letter-spacing: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+.ak-nav .ak-nav_list > li .lang-switcher {
+  padding: 10px 0;
+  height: inherit;
+  min-height: 0;
+}
+
+@media screen and (max-width: 1199px) {
+  .ak-nav .ak-nav_list > li .lang-switcher {
+    padding: 8px 20px;
+  }
+}
+
+.lang-switcher button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+.lang-switcher button.active {
+  color: #FFD28D;
+}
+
+.lang-switcher button:hover {
+  color: #FFD28D;
+}
+
+.lang-switcher span {
+  color: #fff;
+  opacity: 0.7;
+  font-size: inherit;
+  line-height: inherit;
+}
 .ak-site_header.ak-style1 .header-top {
   position: relative;
   padding: 0px 10px 0px 28px;
