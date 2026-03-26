@@ -10,32 +10,30 @@
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Preloader
-| 2. Mobile Menu
-| 3. Sticky Header
-| 4. Dynamic Background
-| 5. Slick Slider
-| 6. Modal Video
-| 7. Social Button Hover
-| 8. Light Gallery
-| 9. Comming soon
-| 10. Scroll Up
-| 11. Gsap Register Plugin
-| 12. Heder Border Animations
-| 13. Comming Soon and Error Pages Border Animations
-| 14. Top Header Slider Bar
-| 15. Images Overlap
-| 16. About Section Border Animations
-| 17. Portfolio Details Animations
-| 18. Food Menu Animations
-| 19. Footer Animations
-| 20. loaction Section border Animitions
-| 21. Images Zoom In and Out Animitions
-| 22. Title Animation
-| 23. Hover Show Images
-| 24. Scroll Down To Top Animation
-| 25. Scroll Effect Blog Details Page
-| 25. Increase decrease count
+| 1. Mobile Menu
+| 2. Sticky Header
+| 3. Dynamic Background
+| 4. Slick Slider
+| 5. Modal Video
+| 6. Social Button Hover
+| 7. Light Gallery
+| 8. Comming soon
+| 9. Scroll Up
+| 10. Gsap Register Plugin
+| 11. Heder Border Animations
+| 12. Comming Soon and Error Pages Border Animations
+| 13. Top Header Slider Bar
+| 14. Images Overlap
+| 15. About Section Border Animations
+| 16. Portfolio Details Animations
+| 17. Food Menu Animations
+| 18. Footer Animations
+| 19. loaction Section border Animitions
+| 20. Images Zoom In and Out Animitions
+| 21. Title Animation
+| 22. Hover Show Images
+| 23. Scroll Effect Blog Details Page
+| 24. Increase decrease count
 
 
     /*--------------------------------------------------------------
@@ -48,7 +46,6 @@
   $(window).on("load", function () {
     $(window).trigger("scroll");
     $(window).trigger("resize");
-    preloader();
   });
 
   $(function () {
@@ -66,26 +63,8 @@
   $(window).on("scroll", function () {
     showScrollUp();
   });
-  /*-------------------------------------------------
-      1. preloader  
- --------------------------------------------------------------*/
-
-  function preloader() {
-    setTimeout(function () {
-      $("#ak-preloader").addClass("loaded");
-
-      if ($("#ak-preloader").hasClass("loaded")) {
-        $("#preloader")
-          .delay(800)
-          .queue(function () {
-            $(this).remove();
-          })
-          .fadeOut();
-      }
-    }, 1000);
-  }
   /*--------------------------------------------------------------
-     2. Mobile  Menu  
+     1. Mobile  Menu  
  -----------------------------------------------------------------*/
   function mainNav() {
     $(".ak-nav").append('<span class="ak-munu_toggle"><span></span></span>');
@@ -494,6 +473,9 @@ function startCountdown() {
         },
         0
       );
+    });
+    $(".footer-log-elem").on("click", function () {
+      $("html,body").animate({ scrollTop: 0 }, 400);
     });
   }
   // For Scroll Up
@@ -1154,35 +1136,7 @@ function startCountdown() {
   }
 
   /*--------------------------------------------------------------
-    24. Scroll Down To Top Animation
- --------------------------------------------------------------*/
-  if ($.exists(".loading-overlap")) {
-    const elem = document.querySelector(".loading-overlap");
-    const elem2 = document.querySelector(".footer-log-elem");
-    var loadingElem = gsap.timeline();
-    elem2.addEventListener("click", function () {
-      loadingElem.to(elem, {
-        duration: 0.3,
-        height: "100vh",
-        ease: Expo.easeInOut,
-      });
-      loadingElem.to("html,body", {
-        scrollTop: 0,
-      });
-      loadingElem.to(elem, {
-        delay: 0.1,
-        top: 0,
-        height: "0vh",
-        duration: 0.4,
-        ease: Expo.easeInOut,
-      });
-      loadingElem.to(elem, {
-        buttom: 0,
-      });
-    });
-  }
-  /*--------------------------------------------------------------
-    25. Scroll Effect Blog Details Page
+    23. Scroll Effect Blog Details Page
  --------------------------------------------------------------*/
   if ($.exists("#infoProduto")) {
     if (widthall > 992) {
@@ -1199,10 +1153,6 @@ function startCountdown() {
       });
     }
   }
-
-  /*--------------------------------------------------------------
-    25. Scroll Effect Blog Details Page
- --------------------------------------------------------------*/
 
   if ($.exists("#foodItems")) {
     const scrollButton = document.getElementById("scroll-btn");

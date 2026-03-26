@@ -10,30 +10,29 @@
 |--------------------------------------------------------------------------
 | 1. Basic Color Variable
 | 2. Typography
-| 3. Preloader
-| 4. Spacing
-| 5. General
-| 6. Slider
-| 7. Video Popup
-| 8. Header
-| 9. Footer
-| 10. Video
-| 11. Hero
-| 12. Slider Text
-| 13. About
-| 14. Opening Hour
-| 15. Food Item
-| 16. Food Menu List
-| 17. Best Item
-| 18. Chef
-| 19. Gallery
-| 20. Testimonial
-| 21. Booking System
-| 22. Blog
-| 23. Comment
-| 24. Location
-| 25. Portfolio
-| 26. Contact
+| 3. Spacing
+| 4. General
+| 5. Slider
+| 6. Video Popup
+| 7. Header
+| 8. Footer
+| 9. Video
+| 10. Hero
+| 11. Slider Text
+| 12. About
+| 13. Opening Hour
+| 14. Food Item
+| 15. Food Menu List
+| 16. Best Item
+| 17. Chef
+| 18. Gallery
+| 19. Testimonial
+| 20. Booking System
+| 21. Blog
+| 22. Comment
+| 23. Location
+| 24. Portfolio
+| 25. Contact
  ................................................................*/
 /*--------------------------------------------------------------
 1. Basic Color Variable
@@ -245,137 +244,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-  3. Preloader
-----------------------------------------------------------------*/
-/* Preloader */
-.ak-preloader {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 99999;
-}
-.ak-preloader .animation-preloader {
-  position: absolute;
-  z-index: 100;
-}
-.ak-preloader .animation-preloader .spinner {
-  animation: spinner 1s infinite linear;
-  border-radius: 50%;
-  border: 3px solid rgba(0, 0, 0, 0.2);
-  border-top-color: #4f4836;
-  height: 9em;
-  margin: 0 auto 3.5em auto;
-  width: 9em;
-}
-
-/* Texto cargando */
-.ak-preloader .animation-preloader .txt-loading {
-  text-align: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  font-size: 55px;
-  font-family: "Baskervville", sans-serif;
-}
-.ak-preloader .animation-preloader .txt-loading .letters-loading:before {
-  animation: letters-loading 3s infinite;
-  color: #ffd28d;
-  content: attr(data-text-preloader);
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  transform: rotateY(-90deg);
-}
-.ak-preloader .animation-preloader .txt-loading .letters-loading {
-  color: rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-.ak-preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
-  animation-delay: 0.1s;
-}
-.ak-preloader .animation-preloader .txt-loading .letters-loading:nth-child(3):before {
-  animation-delay: 0.2s;
-}
-.ak-preloader .animation-preloader .txt-loading .letters-loading:nth-child(4):before {
-  animation-delay: 0.3s;
-}
-.ak-preloader .animation-preloader .txt-loading .letters-loading:nth-child(5):before {
-  animation-delay: 0.4s;
-}
-.ak-preloader .animation-preloader .txt-loading .letters-loading:nth-child(6):before {
-  animation-delay: 0.5s;
-}
-.ak-preloader .animation-preloader .txt-loading .letters-loading:nth-child(7):before {
-  animation-delay: 0.6s;
-}
-.ak-preloader .animation-preloader .txt-loading .letters-loading:nth-child(8):before {
-  animation-delay: 0.8s;
-}
-.ak-preloader .animation-preloader .txt-loading .letters-loading:nth-child(9):before {
-  animation-delay: 0.9s;
-}
-.ak-preloader .loader-section {
-  background-color: #040d10;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  width: calc(50% + 1px);
-}
-.ak-preloader .loader-section.section-left {
-  left: 0;
-}
-.ak-preloader .loader-section.section-right {
-  right: 0;
-}
-
-.loaded .animation-preloader {
-  opacity: 0;
-  transition: 0.2s ease-out;
-}
-.loaded .loader-section.section-left {
-  transform: translateX(-101%);
-  transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);
-}
-.loaded .loader-section.section-right {
-  transform: translateX(101%);
-  transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);
-}
-
-/* Animación del preloader */
-@keyframes spinner {
-  to {
-    transform: rotateZ(360deg);
-  }
-}
-/* Animación de las letras cargando del preloader */
-@keyframes letters-loading {
-  0%, 75%, 100% {
-    opacity: 0;
-    transform: rotateY(-90deg);
-  }
-  25%, 50% {
-    opacity: 1;
-    transform: rotateY(0deg);
-  }
-}
-/* Tamaño de portatil hacia atras (portatil, tablet, celular) */
-@media screen and (max-width: 767px) {
-  .ak-preloader .animation-preloader .txt-loading {
-    text-align: center;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-            user-select: none;
-    font-size: 32px;
-  }
-}
-/*--------------------------------------------------------------
-  4. Spacing
+  3. Spacing
 ----------------------------------------------------------------*/
 @media screen and (min-width: 992px) {
   .ak-height-0 {
@@ -646,7 +515,7 @@ textarea {
   }
 }
 /*--------------------------------------------------------------
-  5. General
+  4. General
 ----------------------------------------------------------------*/
 .ak-row-gap-20 {
   margin-left: -10px;
@@ -1799,15 +1668,6 @@ select:focus {
   color: #FFD28D;
 }
 
-.loading-overlap {
-  position: fixed;
-  background-color: black;
-  z-index: 1000;
-  height: 0vh;
-  width: 100%;
-  bottom: 0;
-}
-
 .cbox-cursor {
   cursor: pointer;
 }
@@ -2137,7 +1997,7 @@ input[type=checkbox] {
 }
 
 /*--------------------------------------------------------------
-  6. Slider
+  5. Slider
 ----------------------------------------------------------------*/
 .btn-style-2.button-prev-next-2 {
   -moz-appearance: none;
@@ -3065,7 +2925,7 @@ input[type=checkbox] {
   }
 }
 /*--------------------------------------------------------------
-7. Video Popup
+6. Video Popup
 ----------------------------------------------------------------*/
 .ak-pd-video .ak-video-open,
 .ak-sample-img .ak-video-open {
@@ -3252,7 +3112,7 @@ input[type=checkbox] {
 }
 /* End video section */
 /*--------------------------------------------------------------
-8. Header
+7. Header
 ----------------------------------------------------------------*/
 .ak-site_header {
   position: relative;
@@ -3964,7 +3824,7 @@ img[src$="Hari1090-Logo.svg"] {
 }
 
 /*--------------------------------------------------------------
-  9. Footer
+  8. Footer
 ----------------------------------------------------------------*/
 .ak-hr-container {
   position: relative;
@@ -4141,7 +4001,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  10. Video
+  9. Video
 ----------------------------------------------------------------*/
 .video-section {
   position: relative;
@@ -4164,7 +4024,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  11. Hero
+  10. Hero
 ----------------------------------------------------------------*/
 .ak-hero.ak-style1 {
   min-height: calc(100vh + 150px);
@@ -4412,7 +4272,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  12. Slider Text
+  11. Slider Text
 ----------------------------------------------------------------*/
 .ak-moving-section-wrap {
   overflow: hidden;
@@ -4466,7 +4326,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  13. About
+  12. About
 ----------------------------------------------------------------*/
 .ak-about-bg-color {
   background: #040D10;
@@ -4687,7 +4547,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  14. Opening Hour
+  13. Opening Hour
 ----------------------------------------------------------------*/
 .ak-bg-secendary {
   background: #05161A;
@@ -4820,7 +4680,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  15. Food Item
+  14. Food Item
 ----------------------------------------------------------------*/
 .ak-card.ak-style-1 {
   position: relative;
@@ -4870,7 +4730,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  16. Food Menu List
+  15. Food Menu List
 ----------------------------------------------------------------*/
 .ak-menu-list {
   display: flex;
@@ -4956,7 +4816,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  17. Best Item
+  16. Best Item
 ----------------------------------------------------------------*/
 .ak-best-item {
   display: flex;
@@ -5018,7 +4878,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  18. Chef
+  17. Chef
 ----------------------------------------------------------------*/
 .chef {
   position: relative;
@@ -5079,7 +4939,7 @@ img[src$="Hari1090-Logo.svg"] {
 }
 
 /*--------------------------------------------------------------
-  19. Gallery
+  18. Gallery
 ----------------------------------------------------------------*/
 .gallery {
   position: relative;
@@ -5119,7 +4979,7 @@ img[src$="Hari1090-Logo.svg"] {
 }
 
 /*--------------------------------------------------------------
-  20. Testimonial
+  19. Testimonial
 ----------------------------------------------------------------*/
 .swiper-slide-active .testimonial-section .testimonial-info-section .testimonial-info-img {
   top: 0px;
@@ -5198,7 +5058,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  21. Booking System
+  20. Booking System
 ----------------------------------------------------------------*/
 .ak-booking-system {
   overflow: hidden;
@@ -5393,7 +5253,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  22. Blog
+  21. Blog
 ----------------------------------------------------------------*/
 .blog-content {
   overflow: hidden;
@@ -5627,7 +5487,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  23. Location
+  22. Location
 ----------------------------------------------------------------*/
 .ak-loaction-hr {
   width: 100%;
@@ -5705,7 +5565,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  24. Portfolio
+  23. Portfolio
 ----------------------------------------------------------------*/
 .ak-portfolio-details-border {
   width: 100%;
@@ -5816,7 +5676,7 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 /*--------------------------------------------------------------
-  25. Contact
+  24. Contact
 ----------------------------------------------------------------*/
 .contact-content {
   width: 85vw;
@@ -6694,7 +6554,7 @@ img[src$="Hari1090-Logo.svg"] {
 }
 
 /*--------------------------------------------------------------
-31. Accordeon
+26. Accordeon
 ----------------------------------------------------------------*/
 .ak-accordeon .ak-accordion-item {
   margin-bottom: 30px;
