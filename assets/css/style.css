@@ -4422,6 +4422,36 @@ img[src$="Hari1090-Logo.svg"] {
   width: 100%;
   height: 100%;
 }
+
+/* Meet the Chef page: keep portrait at a friendly size (override flex-grow: 2) */
+.meet-the-content-about-section .about-img.meet-chef-photo {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: clamp(260px, 38%, 440px);
+  max-width: 440px;
+  align-self: center;
+}
+.meet-the-content-about-section .about-img.meet-chef-photo img {
+  width: 100%;
+  height: auto;
+  max-height: min(72vh, 560px);
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 4px;
+  display: block;
+}
+@media screen and (max-width: 991px) {
+  .meet-the-content-about-section .about-img.meet-chef-photo {
+    flex-basis: 100%;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .meet-the-content-about-section .about-img.meet-chef-photo img {
+    max-height: 480px;
+  }
+}
+
 .meet-the-content-about-section .about-social {
   flex-grow: 0;
   flex-shrink: 1;
@@ -6608,4 +6638,64 @@ img[src$="Hari1090-Logo.svg"] {
 .ak-accordeon .ak-accordion-item.ak-color-1 .ak-accordion-body {
   background: rgba(241, 241, 241, 0.3);
   font-size: 16px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* About page – section headings (not main 60px title) */
+.ak-about.ak-style-1 .about-text-section .about-heading-section {
+  font-size: 1.5rem;
+  line-height: 1.35;
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  margin: 0;
+}
+.ak-about.ak-style-1 .about-text-section .about-heading-label {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--yellow-color);
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .ak-about.ak-style-1 .about-text-section .about-heading-section {
+    font-size: 1.25rem;
+  }
+  .ak-about.ak-style-1 .about-text-section .about-heading-label {
+    font-size: 1.1rem;
+  }
+}
+
+/* About page: vision block below video (two columns, centred full width) */
+.ak-about.about-vision-section {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Override template rule .about-section.ak-about-1 { width: 50% } so block is centred, not left-half */
+.ak-about.about-vision-section .about-section.ak-about-1 {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 12px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 992px) {
+  .ak-about.about-vision-section .about-section.ak-about-1 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .about-vision-aside {
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--border-color);
+  }
+}
+@media screen and (max-width: 991px) {
+  .ak-about.about-vision-section .about-section.ak-about-1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

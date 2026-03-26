@@ -6,6 +6,7 @@ const translations = {
     nav_menu: "Speisekarte",
     nav_chef: "CHEF",
     nav_portfolio: "Portfolio",
+    nav_catering: "Catering",
     nav_blog: "Blog",
     nav_gallery: "Galerie",
     nav_contact: "Kontakt",
@@ -50,6 +51,7 @@ const translations = {
     nav_menu: "Menu",
     nav_chef: "CHEF",
     nav_portfolio: "Portfolio",
+    nav_catering: "Catering",
     nav_blog: "Blog",
     nav_gallery: "Gallery",
     nav_contact: "Contact",
@@ -104,6 +106,14 @@ function setCurrentLang(lang) {
 
 function applyTranslations(lang) {
   const dict = translations[lang] || translations.de;
+
+  // Navbar links (data-key matches translation keys)
+  document.querySelectorAll("a[data-key]").forEach((el) => {
+    const key = el.getAttribute("data-key");
+    if (dict[key]) {
+      el.textContent = dict[key];
+    }
+  });
 
   // Text nodes
   document.querySelectorAll("[data-i18n]").forEach((el) => {
