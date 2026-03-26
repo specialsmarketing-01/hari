@@ -176,7 +176,7 @@
     }
     if ($.exists(".ak-slider-hero-2")) {
       var heroBgUrls = [
-        "assets/img/Hari1090_Restaurant_by_Kumar's_Kitchen_Speisesaal_Nr.1.jpg",
+        "assets/img/catering/herosecrion.jpg",
         "assets/img/Hari1090_Restaurant_by_Kumar's_Kitchen_Speisen_food_Cocktail_Drinks_Summer_Getränke_Sommer_im_Garten_Garden.jpg",
         "assets/img/Hari1090_Restaurant_by_Kumar's_Kitchen_Aperol_Sommer_Garten_Chicken_Pakore_Hühnchen_gebacken.jpg",
       ];
