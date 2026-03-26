@@ -166,8 +166,10 @@
   function dynamicBackground() {
     $("[data-src]").each(function () {
       var src = $(this).attr("data-src");
+      if (!src) return;
+      var safe = String(src).replace(/\\/g, "/").replace(/"/g, '\\"');
       $(this).css({
-        "background-image": "url(" + src + ")",
+        "background-image": 'url("' + safe + '")',
       });
     });
   }
@@ -194,6 +196,20 @@
       });
     }
     if ($.exists(".ak-slider-hero-2")) {
+      var heroBgUrls = [
+        "assets/img/Hari1090_Restaurant_by_Kumar's_Kitchen_Speisesaal_Nr.1.jpg",
+        "assets/img/Hari1090_Restaurant_by_Kumar's_Kitchen_Speisen_food_Cocktail_Drinks_Summer_Getränke_Sommer_im_Garten_Garden.jpg",
+        "assets/img/Hari1090_Restaurant_by_Kumar's_Kitchen_Aperol_Sommer_Garten_Chicken_Pakore_Hühnchen_gebacken.jpg",
+      ];
+      function applyHeroBackgroundFromSlide(swiperInstance) {
+        var $heroBg = $(".ak-hero.ak-style1 .ak-hero-bg");
+        if (!$heroBg.length) return;
+        var i = swiperInstance.realIndex;
+        if (i < 0 || i >= heroBgUrls.length) i = 0;
+        var src = heroBgUrls[i];
+        var safe = String(src).replace(/\\/g, "/").replace(/"/g, '\\"');
+        $heroBg.css("background-image", 'url("' + safe + '")');
+      }
       var swiper = new Swiper(".ak-slider-hero-2", {
         loop: true,
         speed: 800,
@@ -206,6 +222,14 @@
         navigation: {
           nextEl: ".ak-swiper-button-prev-hero-2",
           prevEl: ".ak-swiper-button-next-hero-2",
+        },
+        on: {
+          init: function () {
+            applyHeroBackgroundFromSlide(this);
+          },
+          slideChange: function () {
+            applyHeroBackgroundFromSlide(this);
+          },
         },
       });
     }

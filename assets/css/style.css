@@ -4026,6 +4026,18 @@ img[src$="Hari1090-Logo.svg"] {
   justify-content: space-between;
   align-items: center;
 }
+.footer-main .footer-contact-label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 500;
+}
+.footer-main .footer-eamil-menu .footer-contact-label {
+  margin-bottom: 10px;
+}
 .footer-main .footer-eamil-menu .footer-email a {
   font-size: 24px;
   color: #fff;
@@ -4175,7 +4187,24 @@ img[src$="Hari1090-Logo.svg"] {
   left: 0;
   top: 0;
   z-index: 9;
+  overflow: hidden;
 }
+
+/* Darken bright hero photo for better text contrast */
+.ak-hero.ak-style1 .ak-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+}
+
 .ak-hero.ak-style1 .hero-text-section {
   z-index: 10;
   margin-left: 160px;
@@ -5182,6 +5211,16 @@ img[src$="Hari1090-Logo.svg"] {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+/* Quandoo checkout widget iframe (min. 300×805px per Quandoo docs) */
+.quandoo-widget-container {
+  width: 100%;
+  min-width: 300px;
+  min-height: 805px;
+}
+.quandoo-widget-container iframe {
+  background-color: #fff;
 }
 
 .booking-system-form.style-2 {

@@ -11,7 +11,7 @@ const translations = {
     nav_contact: "Kontakt",
 
     // Footer + contact basics
-    footer_email_label: "E-Mail",
+    footer_email_label: "Email Address",
     footer_phone_label: "Telefon",
     footer_address_label: "Adresse",
     footer_hours_label: "Öffnungszeiten",
@@ -55,7 +55,7 @@ const translations = {
     nav_contact: "Contact",
 
     // Footer + contact basics
-    footer_email_label: "Email",
+    footer_email_label: "Email Address",
     footer_phone_label: "Phone",
     footer_address_label: "Address",
     footer_hours_label: "Opening hours",
