@@ -4040,24 +4040,41 @@ img[src$="Hari1090-Logo.svg"] {
   margin-left: 0px;
 }
 
-/* Local hero video (index): full-bleed behind gradient overlay */
+/* Local hero video (index): hero = full viewport; video layer bleeds past top/bottom to remove gaps */
+.ak-hero.ak-style1.ak-hero--video-bg {
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: 100svh;
+  min-height: 100lvh;
+}
 .ak-hero.ak-hero--video-bg .ak-hero-video-wrap {
   position: absolute;
-  inset: 0;
   z-index: 8;
   overflow: hidden;
   pointer-events: none;
   background: #111 center / cover no-repeat
     url("../img/catering/herosecrion.jpg");
+  left: 0;
+  right: 0;
+  /* Large vertical bleed so cover + scale always fills hero top & bottom */
+  top: -22%;
+  bottom: -22%;
+  height: 144%;
+  min-height: 144%;
 }
 .ak-hero.ak-hero--video-bg .ak-hero-video-wrap .ak-hero-video-el {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
+  transform: translate(-50%, -50%) scale(1.42);
+  transform-origin: center center;
 }
 @media (prefers-reduced-motion: reduce) {
   .ak-hero.ak-hero--video-bg .ak-hero-video-wrap .ak-hero-video-el {
@@ -4065,37 +4082,44 @@ img[src$="Hari1090-Logo.svg"] {
   }
 }
 
-/* Hero video: mobile / portrait — stable height + framing */
+/* Hero video: mobile — extra bleed + scale for tall phones */
 @media screen and (max-width: 991px) {
   .ak-hero.ak-style1.ak-hero--video-bg {
     min-height: 100vh;
     min-height: 100dvh;
+    min-height: 100svh;
+    min-height: 100lvh;
   }
   .ak-hero.ak-hero--video-bg .ak-hero-video-wrap {
-    min-height: 100%;
+    top: -28%;
+    bottom: -28%;
+    height: 156%;
+    min-height: 156%;
+  }
+  .ak-hero.ak-hero--video-bg .ak-hero-video-wrap .ak-hero-video-el {
+    transform: translate(-50%, -50%) scale(1.52);
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 575px) {
+  .ak-hero.ak-hero--video-bg .ak-hero-video-wrap {
+    top: -32%;
+    bottom: -32%;
+    height: 164%;
+    min-height: 164%;
+  }
   .ak-hero.ak-hero--video-bg .ak-hero-video-wrap .ak-hero-video-el {
-    /* Portrait: landscape footage — keep subject area visible */
-    object-position: center 28%;
-    width: 100%;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
+    transform: translate(-50%, -50%) scale(1.62);
   }
 }
-@media screen and (max-width: 480px) {
-  .ak-hero.ak-hero--video-bg .ak-hero-video-wrap .ak-hero-video-el {
-    object-position: center 22%;
-    transform: scale(1.08);
-    transform-origin: center 30%;
+@media screen and (max-width: 991px) and (orientation: landscape) {
+  .ak-hero.ak-hero--video-bg .ak-hero-video-wrap {
+    top: -10%;
+    bottom: -10%;
+    height: 120%;
+    min-height: 120%;
   }
-}
-@media screen and (max-width: 767px) and (orientation: landscape) {
   .ak-hero.ak-hero--video-bg .ak-hero-video-wrap .ak-hero-video-el {
-    object-position: center center;
-    transform: none;
+    transform: translate(-50%, -50%) scale(1.22);
   }
 }
 
