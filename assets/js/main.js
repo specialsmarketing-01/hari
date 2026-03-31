@@ -54,6 +54,7 @@
     stickyHeader();
     dynamicBackground();
     swiperInit();
+    initHeroBackgroundVideo();
     startCountdown();
     modalVideo();
     hoverTab();
@@ -142,6 +143,19 @@
   /*--------------------------------------------------------------
      4. Dynamic Background
 -------------------------------------------------------------*/
+  function initHeroBackgroundVideo() {
+    var el = document.querySelector(".ak-hero-video-el");
+    if (!el) return;
+    el.muted = true;
+    el.defaultMuted = true;
+    var play = function () {
+      el.play().catch(function () {});
+    };
+    play();
+    el.addEventListener("canplay", play, { once: true });
+    el.addEventListener("loadeddata", play, { once: true });
+  }
+
   function dynamicBackground() {
     $("[data-src]").each(function () {
       var src = $(this).attr("data-src");
@@ -183,6 +197,10 @@
       function applyHeroBackgroundFromSlide(swiperInstance) {
         var $heroBg = $(".ak-hero.ak-style1 .ak-hero-bg");
         if (!$heroBg.length) return;
+        if ($(".ak-hero.ak-style1.ak-hero--video-bg").length) {
+          $heroBg.css("background-image", "none");
+          return;
+        }
         var i = swiperInstance.realIndex;
         if (i < 0 || i >= heroBgUrls.length) i = 0;
         var src = heroBgUrls[i];

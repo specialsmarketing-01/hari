@@ -4039,6 +4039,32 @@ img[src$="Hari1090-Logo.svg"] {
 .ak-hero.ak-style1.heignt-100vh .hero-text-section {
   margin-left: 0px;
 }
+
+/* Local hero video (index): full-bleed behind gradient overlay */
+.ak-hero.ak-hero--video-bg .ak-hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  overflow: hidden;
+  pointer-events: none;
+  background: #111 center / cover no-repeat
+    url("../img/catering/herosecrion.jpg");
+}
+.ak-hero.ak-hero--video-bg .ak-hero-video-wrap .ak-hero-video-el {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ak-hero.ak-hero--video-bg .ak-hero-video-wrap .ak-hero-video-el {
+    display: none;
+  }
+}
+
 .ak-hero.ak-style1 .ak-hero-bg {
   height: 100%;
   width: 100%;
